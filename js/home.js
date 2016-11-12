@@ -1,5 +1,5 @@
 $(function() {
-	new Vue({
+	var App = new Vue({
 	  el: '#app',
 	  data: function () {
 	      return {

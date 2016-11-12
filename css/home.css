@@ -9,7 +9,7 @@ body{
 
 .app-nav.navbar-inverse .navbar-brand{
 	color: white;
-	margin-top: -5px;
+	font-size: 30px;
 }
 
 .app-nav .apps{
@@ -94,7 +94,7 @@ body{
 }
 
 .header-text h2 {
-    font-size: 40px;
+    font-size: 25px;
 }
 
 .header-text h2 span {
@@ -105,6 +105,7 @@ body{
 .header-text h3 span {
 	background-color: #000;
 	padding: 15px;
+	font-size: 15px;
 }
 
 .btn-min-block {
@@ -123,4 +124,12 @@ body{
     color: #000;
     background-color: #fff;
     border-color: #fff;
+}
+
+
+/* search bar in home page */
+.input-group{
+	width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
