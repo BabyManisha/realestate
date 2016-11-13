@@ -21,10 +21,22 @@ body{
     margin-top: 20px;
 }
 
+.show{
+	display: block;
+}
+
+.hide{
+	display: none;
+}
+
+.re-btn a{
+	margin: 5px;
+}
+
 /* Carousel Styles */
 .app-container.container{
 	width: auto;
-	padding-top: 1px;
+	padding: 1px 0px;
 }
 
 .carousel-indicators .active {
@@ -103,9 +115,9 @@ body{
 }
 
 .header-text h3 span {
-	background-color: #000;
+	background-color: transparent;
 	padding: 15px;
-	font-size: 15px;
+	font-size: 16px;
 }
 
 .btn-min-block {
@@ -126,10 +138,154 @@ body{
     border-color: #fff;
 }
 
+/* buy app */
+.app-buy-div{
+	width: 60%;
+	margin: 10px auto;
+}
+
+.app-img{
+	width: 200px;
+	height: 100px;
+	border-radius: 4px;
+	box-shadow: 3px 3px 3px;
+}
+
+/* see app */
+.app-sell-div{
+	width: 30%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 20px;
+}
+
+/*  rent app */
+.app-search.input-group{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+/* footer css */
+.nav-foo.navbar{
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+
+.navbar-footer{
+	padding-left: 10px;
+}
 
 /* search bar in home page */
 .input-group{
 	width: 50%;
     margin-left: auto;
     margin-right: auto;
+}
+
+
+/* about page */
+.app-about-div p{
+	width: 75%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 20px;
+	padding: 15px 50px;
+	/*background-color: #74b7e0;*/
+	font-size: 20px;
+	background: transparent;
+	color: gray;
+}
+
+.app-about-div{
+	width: 100%;
+	/*background-image: url("../images/r5.png");*/
+}
+
+/* contact page */
+.app-contact-form{
+	width: 50%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 1px;
+	margin-bottom: 20px;
+	border: 2px solid #5fb0e4;
+	border-radius: 5px;
+	padding: 50px;
+	background-color: #5fb0e4;
+	font-size: 18px;
+}
+
+.app-contact-div{
+	width: 100%;
+	background-image: url("../images/h1.jpg");
+}
+
+/* grid css */
+.canvas {
+   border: 0px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+.row {
+	display:table;
+	table-layout:fixed; 
+	border-spacing: 1px; 
+	text-align: left;
+	background-color: #fff; 
+}
+.col {
+	display:table-cell; 
+	padding: 5px 10px 5px 10px; 
+	text-align: left;
+	border-right: 0px;
+	border-left: 0px;
+}
+.row.header {
+  	border-spacing: 1px 0px;
+  	background: #F5F5F5;
+}
+.row.header .col {
+	background: #F5F5F5;
+	color: #7F7F7F;
+}
+.row.header .col div{
+	display: inherit;
+}
+.col-head{
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+.col-prize{
+	color: #1e68ab;
+}
+.col-foo{
+	padding: 10px 15px;
+	cursor: pointer;
+}
+.app-img.map-img{
+	width: 120px;
+	height: 80px;
+	box-shadow: none;
+}
+.map-span{
+	font-size: 8px;
+	cursor: pointer;
+}
+.fa.fa-heart{
+	color: red;
+}
+
+.prop-back{
+	width: 60%;
+	margin: 5px auto;
+}
+
+.prop-div.row{
+	margin: 5px auto;
+}
+
+.app-img-2x{
+	width: 550px;
+	height: 350px;
+	margin-bottom: 20px;
 }
