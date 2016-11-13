@@ -20,6 +20,9 @@ $(function() {
 	    	goBack: function(){
 	    		this.showProp = true;
 	    		this.selectedProp = {};
+	    	},
+	    	getContact: function(){
+	    		this.$parent.getContact();
 	    	}
 	    }
 	});
@@ -42,6 +45,9 @@ $(function() {
 	    	goBack: function(){
 	    		this.showProp = true;
 	    		this.selectedProp = {};
+	    	},
+	    	getContact: function(){
+	    		this.$parent.getContact();
 	    	}
 	    }
 	});
@@ -68,6 +74,9 @@ $(function() {
 	    	goBack: function(){
 	    		this.showProp = true;
 	    		this.selectedProp = {};
+	    	},
+	    	getContact: function(){
+	    		this.$parent.getContact();
 	    	}
 	    }
 	});
@@ -379,7 +388,10 @@ $(function() {
 	  methods: {
 	    switchApp: function (ap) {
 	    	this.activeApp = ap;
-	    }
+	    },
+	    getContact: function(){
+    		this.activeApp = 'Contact';
+    	}
 	  }
 	})
 });

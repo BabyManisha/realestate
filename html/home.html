@@ -186,7 +186,8 @@
             <p class="re-btn">
             	<a href="#" class="btn btn-primary" role="button" 
             	v-on:click="getDetails(rp)">Details</a> 
-				<a href="#" class="btn btn-default" role="button">Contact</a>
+				<a href="#" class="btn btn-default" role="button" 
+				v-on:click="getContact()">Contact</a>
             </p>
           </div>
         </div>
@@ -231,7 +232,7 @@
 			v-bind:class="selectedProp.save ? 'fa-heart' : 'fa-heart-o'"> Save </i>
 		</div>
 		<div class="col">
-			<button class="col-foo btn btn-info">
+			<button class="col-foo btn btn-info" v-on:click="getContact()">
 			<i class="fa fa-phone"></i> Contact </button>
 		</div>
 	</div>
@@ -340,7 +341,7 @@
 			v-bind:class="selectedProp.save ? 'fa-heart' : 'fa-heart-o'"> Save </i>
 		</div>
 		<div class="col">
-			<button class="col-foo btn btn-info">
+			<button class="col-foo btn btn-info" v-on:click="getContact()">
 			<i class="fa fa-phone"></i> Contact </button>
 		</div>
 	</div>
@@ -388,7 +389,8 @@
             <p class="re-btn">
             	<a href="#" class="btn btn-primary" role="button" 
             	v-on:click=getDetails(rp)>Details</a> 
-				<a href="#" class="btn btn-default" role="button">Contact</a>
+				<a href="#" class="btn btn-default" role="button"
+				v-on:click="getContact()">Contact</a>
             </p>
           </div>
         </div>
@@ -440,7 +442,7 @@
 			v-bind:class="selectedProp.save ? 'fa-heart' : 'fa-heart-o'"> Save </i>
 		</div>
 		<div class="col">
-			<button class="col-foo btn btn-info">
+			<button class="col-foo btn btn-info" v-on:click="getContact()">
 			<i class="fa fa-phone"></i> Contact </button>
 		</div>
 	</div>
