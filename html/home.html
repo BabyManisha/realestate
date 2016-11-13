@@ -196,46 +196,7 @@
 </div>
 </div>
 <div v-else>
-	<div class="prop-back">
-		<button class="btn btn-default" v-on:click="goBack()">
-			<i class="fa fa-chevron-circle-left"></i> Go Back </button>
-	</div>
-	<div class="prop-div row">
-		<div class="col">
-			<h3 v-text="selectedProp.address"></h3>
-			<img class="app-img-2x" src="../images/{{selectedProp.img}}"><br>
-			<h4 class="row head">Near by Places : </h4>
-		</div>
-		<div class="col">
-			<h4>Details : </h4>
-			<span>Type : {{selectedProp.type}}</span><br><br>
-			<span>Model : {{selectedProp.model}}</span><br><br>
-			<span>Dimensios : {{selectedProp.width}} x {{selectedProp.depth}}</span><br><br>
-			<span>BedRooms : {{selectedProp.bedrooms}}</span><br><br>
-			<span>Face : {{selectedProp.face}}</span><br><br>
-			<span>Price : {{selectedProp.price}}</span><br><br>
-			<span>Price per Sqft : {{selectedProp.sqprice}}</span><br><br>
-			<span>Est. Payment : {{selectedProp.estprice}}</span>
-		</div>
-	</div>
-	<div class="prop-div row">
-		<div v-for="(k,v) in selectedProp.nearBy" class="col">
-			<b>{{k | capitalize}} : </b><br>
-			<span v-for="vl in v">
-				{{vl.name}} - {{vl.distance}} <br>
-			</span>
-		</div>
-	</div>
-	<div class="prop-div row">
-		<div class="col">
-			<i class="col-foo fa" v-on:click="selectedProp.save = !selectedProp.save"
-			v-bind:class="selectedProp.save ? 'fa-heart' : 'fa-heart-o'"> Save </i>
-		</div>
-		<div class="col">
-			<button class="col-foo btn btn-info" v-on:click="getContact()">
-			<i class="fa fa-phone"></i> Contact </button>
-		</div>
-	</div>
+	<prop :selected-prop="selectedProp"></prop>
 </div>
 </script>
 
@@ -305,46 +266,7 @@
 </div>
 
 <div v-else>
-	<div class="prop-back">
-		<button class="btn btn-default" v-on:click="goBack()">
-			<i class="fa fa-chevron-circle-left"></i> Go Back </button>
-	</div>
-	<div class="prop-div row">
-		<div class="col">
-			<h3 v-text="selectedProp.address"></h3>
-			<img class="app-img-2x" src="../images/{{selectedProp.img}}"><br>
-			<h4 class="row head">Near by Places : </h4>
-		</div>
-		<div class="col">
-			<h4>Details : </h4>
-			<span>Type : {{selectedProp.type}}</span><br><br>
-			<span>Model : {{selectedProp.model}}</span><br><br>
-			<span>Dimensios : {{selectedProp.width}} x {{selectedProp.depth}}</span><br><br>
-			<span>BedRooms : {{selectedProp.bedrooms}}</span><br><br>
-			<span>Face : {{selectedProp.face}}</span><br><br>
-			<span>Price : {{selectedProp.price}}</span><br><br>
-			<span>Price per Sqft : {{selectedProp.sqprice}}</span><br><br>
-			<span>Est. Payment : {{selectedProp.estprice}}</span>
-		</div>
-	</div>
-	<div class="prop-div row">
-		<div v-for="(k,v) in selectedProp.nearBy" class="col">
-			<b>{{k | capitalize}} : </b><br>
-			<span v-for="vl in v">
-				{{vl.name}} - {{vl.distance}} <br>
-			</span>
-		</div>
-	</div>
-	<div class="prop-div row">
-		<div class="col">
-			<i class="col-foo fa" v-on:click="selectedProp.save = !selectedProp.save"
-			v-bind:class="selectedProp.save ? 'fa-heart' : 'fa-heart-o'"> Save </i>
-		</div>
-		<div class="col">
-			<button class="col-foo btn btn-info" v-on:click="getContact()">
-			<i class="fa fa-phone"></i> Contact </button>
-		</div>
-	</div>
+	<prop :selected-prop="selectedProp"></prop>
 </div>
 </script>
 
@@ -406,46 +328,7 @@
 </div>
 </div>
 <div v-else>
-	<div class="prop-back">
-		<button class="btn btn-default" v-on:click="goBack()">
-			<i class="fa fa-chevron-circle-left"></i> Go Back </button>
-	</div>
-	<div class="prop-div row">
-		<div class="col">
-			<h3 v-text="selectedProp.address"></h3>
-			<img class="app-img-2x" src="../images/{{selectedProp.img}}"><br>
-			<h4 class="row head">Near by Places : </h4>
-		</div>
-		<div class="col">
-			<h4>Details : </h4>
-			<span>Type : {{selectedProp.type}}</span><br><br>
-			<span>Model : {{selectedProp.model}}</span><br><br>
-			<span>Dimensios : {{selectedProp.width}} x {{selectedProp.depth}}</span><br><br>
-			<span>BedRooms : {{selectedProp.bedrooms}}</span><br><br>
-			<span>Face : {{selectedProp.face}}</span><br><br>
-			<span>Price : {{selectedProp.price}}</span><br><br>
-			<span>Price per Sqft : {{selectedProp.sqprice}}</span><br><br>
-			<span>Est. Payment : {{selectedProp.estprice}}</span>
-		</div>
-	</div>
-	<div class="prop-div row">
-		<div v-for="(k,v) in selectedProp.nearBy" class="col">
-			<b>{{k | capitalize}} : </b><br>
-			<span v-for="vl in v">
-				{{vl.name}} - {{vl.distance}} <br>
-			</span>
-		</div>
-	</div>
-	<div class="prop-div row">
-		<div class="col">
-			<i class="col-foo fa" v-on:click="selectedProp.save = !selectedProp.save"
-			v-bind:class="selectedProp.save ? 'fa-heart' : 'fa-heart-o'"> Save </i>
-		</div>
-		<div class="col">
-			<button class="col-foo btn btn-info" v-on:click="getContact()">
-			<i class="fa fa-phone"></i> Contact </button>
-		</div>
-	</div>
+	<prop :selected-prop="selectedProp"></prop>
 </div>
 </script>
 
@@ -505,4 +388,47 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
+</script>
+
+<script type="text/x-template" id="app-prop">
+	<div class="prop-back">
+		<button class="btn btn-default" v-on:click="goBack()">
+			<i class="fa fa-chevron-circle-left"></i> Go Back </button>
+	</div>
+	<div class="prop-div row">
+		<div class="col">
+			<h3 v-text="selectedProp.address"></h3>
+			<img class="app-img-2x" src="../images/{{selectedProp.img}}"><br>
+			<h4 class="row head">Near by Places : </h4>
+		</div>
+		<div class="col">
+			<h4>Details : </h4>
+			<span>Type : {{selectedProp.type}}</span><br><br>
+			<span>Model : {{selectedProp.model}}</span><br><br>
+			<span>Dimensios : {{selectedProp.width}} x {{selectedProp.depth}}</span><br><br>
+			<span>BedRooms : {{selectedProp.bedrooms}}</span><br><br>
+			<span>Face : {{selectedProp.face}}</span><br><br>
+			<span>Price : {{selectedProp.price}}</span><br><br>
+			<span>Price per Sqft : {{selectedProp.sqprice}}</span><br><br>
+			<span>Est. Payment : {{selectedProp.estprice}}</span>
+		</div>
+	</div>
+	<div class="prop-div row">
+		<div v-for="(k,v) in selectedProp.nearBy" class="col">
+			<b>{{k | capitalize}} : </b><br>
+			<span v-for="vl in v">
+				{{vl.name}} - {{vl.distance}} <br>
+			</span>
+		</div>
+	</div>
+	<div class="prop-div row">
+		<div class="col">
+			<i class="col-foo fa" v-on:click="selectedProp.save = !selectedProp.save"
+			v-bind:class="selectedProp.save ? 'fa-heart' : 'fa-heart-o'"> Save </i>
+		</div>
+		<div class="col">
+			<button class="col-foo btn btn-info" v-on:click="getContact()">
+			<i class="fa fa-phone"></i> Contact </button>
+		</div>
+	</div>
 </script>

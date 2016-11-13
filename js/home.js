@@ -94,6 +94,21 @@ $(function() {
 	    }
 	});
 
+	Vue.component('prop', {
+	    template: "#app-prop",
+	    props: {
+	    	selectedProp: Object
+	    },
+	    methods: {
+	    	goBack : function(){
+	    		this.$parent.goBack();
+	    	},
+	    	getContact: function(){
+	    		this.$parent.getContact();
+	    	}
+	    }
+	});
+
 
 	var App = new Vue({
 	  el: '#app',
