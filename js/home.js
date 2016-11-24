@@ -230,7 +230,7 @@ $(function() {
 	  data: function () {
 	      return {
 	        'navApps': ['Home', 'Buy', 'Sell', 'Rent', 'About', 'Contact'],
-	        'activeApp': 'Buy',
+	        'activeApp': 'Home',
             'sampleData': {
             	'home1' : {
 					'img': 'hm1.jpg',
