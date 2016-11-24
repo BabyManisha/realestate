@@ -99,6 +99,121 @@ $(function() {
 	    props: {
 	    	selectedProp: Object
 	    },
+	    created: function(){
+	    	var self = this;
+	    	x = navigator.geolocation;
+	    	x.getCurrentPosition(success, failure);
+
+	    	function success(position){
+	    		//to get current location
+	    		// var mylat = position.coords.latitude;
+	    		// var mylong = position.coords.longitude;
+
+	    		var mylat = self.selectedProp.latitude || position.coords.latitude;
+	    		var mylong = self.selectedProp.longitude || position.coords.longitude;
+
+	    		//Creating a new object for using latitude and longitude values with Google map.
+	    		var latLng = new google.maps.LatLng(mylat, mylong);
+
+	    		//setting up our google map....
+	    		showMap(latLng);
+
+	    		//create a marker
+	    		// var marker = new google.maps.Marker({map: map, position: latLng});
+
+	    		//for nearby places....
+	    		addNearByPlaces(latLng);
+	    		createMarker(latLng);
+
+	    		function showMap(latLng) {
+	    		  //Setting up the map options like zoom level, map type.
+	    		  var mapOptions = {
+	    		    center: latLng,
+	    		    zoom: 18,
+	    		    mapTypeId: google.maps.MapTypeId.ROADMAP
+	    		  };
+	    		 
+	    		  //Creating the Map instance and assigning the HTML div element to render it in.
+	    		  map = new google.maps.Map(document.getElementById("map"), mapOptions);
+	    		}
+
+
+	    		function addNearByPlaces(latLng) {
+	    		  var nearByService = new google.maps.places.PlacesService(map);
+	    		 
+	    		  var requestFood = {
+	    		    location: latLng,
+	    		    radius: 1000,
+	    		    types: ['food', 'bakery', 'cafe', 'restaurant']
+	    		  };
+
+	    		  var requestMovies = {
+	    		    location: latLng,
+	    		    radius: 1000,
+	    		    types: ['movie_theater']
+	    		  };
+	    		 
+	    		  nearByService.nearbySearch(requestFood, handleNearBySearchResults);
+	    		  nearByService.nearbySearch(requestMovies, handleNearBySearchResults);
+	    		}
+	    		 
+	    		function handleNearBySearchResults(results, status) {
+	    			var icons = { "food" : "../images/food.png",
+	    						"movie_theater" : "../images/movie.png"};
+	    		  if (status == google.maps.places.PlacesServiceStatus.OK) {
+	    		    for (var i = 0; i < results.length; i++) {
+	    		      var place = results[i], placesTypes = place['types'], icon = '../images/food.png';
+	    		      for(let i in icons){
+	    		      	if(placesTypes.indexOf(i) > -1){
+	    		      		icon = icons[i];
+	    		      	}
+	    		      }
+	    		      createMarker(place.geometry.location, place, icon);
+	    		    }
+	    		  }
+	    		}
+	    		 
+	    		function createMarker(latLng, placeResult, icon) {
+	    		  var markerOptions = {
+	    		    position: latLng,
+	    		    map: map,
+	    		    animation: google.maps.Animation.DROP,
+	    		    clickable: true,
+	    		    icon: icon
+	    		  }
+	    		  //Setting up the marker object to mark the location on the map canvas.
+	    		  var marker = new google.maps.Marker(markerOptions);
+	    		 
+	    		  if (placeResult) {
+	    		    var content = placeResult.name+"<br/>"+placeResult.vicinity+"<br/>"+placeResult.types;
+	    		    addInfoWindow(marker, latLng, content);
+	    		  }
+	    		  else {
+	    		    var content = "You are here: " + latLng.lat() + ", " + latLng.lng();
+	    		    addInfoWindow(marker, latLng, content);
+	    		  }
+	    		 
+	    		}
+
+	    		function addInfoWindow(marker, latLng, content) {
+	    		  var infoWindowOptions = {
+	    		    content: content,
+	    		    position: latLng
+	    		  };
+	    		 
+	    		  var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
+	    		 
+	    		  google.maps.event.addListener(marker, "click", function() {
+	    		    infoWindow.open(map);
+	    		  });
+	    		}
+
+	    	}
+
+	    	function failure(position){
+	    		$("#lat").html("<p>It didm't work, co-ordinates not available!</p>");
+	    	}
+	    },
 	    methods: {
 	    	goBack : function(){
 	    		this.$parent.goBack();
@@ -115,7 +230,7 @@ $(function() {
 	  data: function () {
 	      return {
 	        'navApps': ['Home', 'Buy', 'Sell', 'Rent', 'About', 'Contact'],
-	        'activeApp': 'Home',
+	        'activeApp': 'Buy',
             'sampleData': {
             	'home1' : {
 					'img': 'hm1.jpg',
@@ -130,6 +245,8 @@ $(function() {
 	        		'sqprice': '₹991',
 	        		'estprice': '₹39,881',
 	        		'save': false,
+	        		'latitude': 16.4376446,
+	        		'longitude': 80.7690454,
 	        		'nearBy': {
 	        			'hospitals' : [
 	        				{'name' : 'Lakshmi RMP Hospital','distance': '1KM'},
@@ -165,6 +282,8 @@ $(function() {
 	        		'sqprice': '₹991',
 	        		'estprice': '₹39,881',
 	        		'save': false,
+	        		'latitude': 16.4337801,
+	        		'longitude': 80.7678633,
 	        		'nearBy': {
 	        			'hospitals' : [
 	        				{'name' : 'Lakshmi RMP Hospital','distance': '1KM'},

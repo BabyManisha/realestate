@@ -140,7 +140,7 @@ body{
 
 /* buy app */
 .app-buy-div{
-	width: 60%;
+	width: 45%;
 	margin: 10px auto;
 }
 
@@ -288,4 +288,15 @@ body{
 	width: 550px;
 	height: 350px;
 	margin-bottom: 20px;
+}
+
+#map{
+	width: 600px;
+	height: 400px;
+}
+
+#map-canvas{
+	width: 600px;
+	height: 400px;
+	margin: 20px;
 }
